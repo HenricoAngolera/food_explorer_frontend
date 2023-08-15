@@ -35,6 +35,7 @@ export default {
   },
   FONTS: {
     ROBOTO: "'Roboto', sans-serif",
-    POPPINS: "'Poppins' sans-serif"
+    POPPINS: "'Poppins' sans-serif",
+    DM_SANS: "'DM Sans', sans-serif;"
   }
 }
