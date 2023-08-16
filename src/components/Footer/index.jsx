@@ -1,5 +1,5 @@
 import { Container, DarkLogo, Copyright, Text } from "./styles";
-import grayDiamond from "../../assets/graydiamond.svg";
+import grayDiamond from "../../assets/icons/graydiamond.svg";
 
 export function Footer() {
   return (

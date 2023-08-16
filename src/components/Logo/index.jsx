@@ -1,4 +1,4 @@
-import diamond from "../../assets/bluediamond.svg";
+import diamond from "../../assets/icons/bluediamond.svg";
 import { Container, Text } from "./styles";
 
 export function Logo() {
