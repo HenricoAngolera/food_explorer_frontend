@@ -36,7 +36,7 @@ export function Details() {
           </Tags>
 
           <Flex>
-            <Quantity number="01" />
+            <Quantity number="01" isDetails />
 
             <Button icon={PiReceipt} title=" pedir" value="25,00" />
           </Flex>

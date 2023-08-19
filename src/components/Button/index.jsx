@@ -1,8 +1,8 @@
 import { Container } from './styles'
 
-export function Button({ icon: Icon, title, value }) {
+export function Button({ icon: Icon, title, value, isBiggerFont }) {
   return (
-    <Container>
+    <Container isBiggerFont={isBiggerFont}>
       {Icon && <Icon />}
       <p>
         {title} {value && `∙ R$${value}`}

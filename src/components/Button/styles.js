@@ -9,6 +9,8 @@ export const Container = styled.button`
   padding: 1rem 4.3rem;
   border-radius: .3rem;
 
+  width: 100%;
+
   border: none;
   background: ${({ theme }) => theme.COLORS.TOMATO_100};
   color: ${({ theme }) => theme.COLORS.LIGHT_100};
@@ -17,7 +19,7 @@ export const Container = styled.button`
     font-size: 2rem;
   }
   > p {
-    font-size: .94rem;
+    font-size: ${({ isBiggerFont }) => (isBiggerFont ? "1.4rem" : ".94rem")};
     font-weight: 500;
   }
 `;

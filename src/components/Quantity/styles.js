@@ -24,7 +24,7 @@ export const Button = styled.button`
 
 export const QuantityNumber = styled.p`
   font-family: ${({ theme }) => theme.FONTS.ROBOTO};
-  font-size: 2.2rem;
+  font-size: ${({ isDetails }) => ( isDetails ? "2.2rem" : "1.6rem")} ;
 
   color: ${({ theme }) => theme.COLORS.LIGHT_300};
 

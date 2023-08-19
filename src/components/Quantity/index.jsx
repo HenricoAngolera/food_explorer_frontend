@@ -3,15 +3,15 @@ import { AiOutlineMinus } from 'react-icons/ai'
 
 import { Container, Button, QuantityNumber } from './styles'
 
-export function Quantity({ number }) {
+export function Quantity({ number, isDetails }) {
   return (
     <Container>
       <Button>
-        <AiOutlinePlus />
+        < AiOutlineMinus />
       </Button>
-      <QuantityNumber>{number}</QuantityNumber>
+      <QuantityNumber isDetails={isDetails}>{number}</QuantityNumber>
       <Button>
-        <AiOutlineMinus />
+        < AiOutlinePlus />
       </Button>
     </Container>
   )
