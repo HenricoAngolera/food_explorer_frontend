@@ -68,4 +68,6 @@ export const Cards = styled.div`
   display: flex;
   gap: 1.6rem;
 
+  width: 40.4rem;
+  overflow-x: auto;
 `;

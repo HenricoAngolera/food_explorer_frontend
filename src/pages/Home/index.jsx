@@ -27,11 +27,22 @@ export function Home() {
               <CardData image={sla} name="Salada Ravenello" price="49,00" isBiggerFont buttons />
               <CardData image={sla} name="Salada Ravenello" price="49,00" isBiggerFont buttons />
               <CardData image={sla} name="Salada Ravenello" price="49,00" isBiggerFont buttons />
-
             </Cards>
           </Section>
-          <Section title="Pratos principais"></Section>
-          <Section title="Bebidas"></Section>
+          <Section title="Pratos principais">
+            <Cards>
+              <CardData image={sla} name="Salada Ravenello" price="49,00" isBiggerFont buttons />
+              <CardData image={sla} name="Salada Ravenello" price="49,00" isBiggerFont buttons />
+              <CardData image={sla} name="Salada Ravenello" price="49,00" isBiggerFont buttons />
+            </Cards>
+          </Section>
+          <Section title="Bebidas">
+            <Cards>
+              <CardData image={sla} name="Salada Ravenello" price="49,00" isBiggerFont buttons />
+              <CardData image={sla} name="Salada Ravenello" price="49,00" isBiggerFont buttons />
+              <CardData image={sla} name="Salada Ravenello" price="49,00" isBiggerFont buttons />
+            </Cards>
+          </Section>
         </Sections>
       </Content>
 

@@ -1,21 +1,24 @@
+import { VscChromeClose } from "react-icons/vsc";
 import { PiReceipt } from "react-icons/pi";
 import { IoMenu } from "react-icons/io5";
 
 import { Logo } from "../Logo";
 import { Container, Menu, Requests } from "./styles";
 
-export function Header() {
+export function Header({ isopened }) {
   return (
-    <Container>
+    <Container isopened={isopened}>
       <Menu>
-        <IoMenu />
+        {isopened ? <VscChromeClose /> : <IoMenu />}
       </Menu>
 
-      <Logo />
+      {isopened && <h1>Menu</h1>}
+      {!isopened && <Logo />}
 
+      {!isopened && 
       <Requests>
         <PiReceipt />
-      </Requests>
+      </Requests>}
     </Container>
   )
 }
