@@ -14,6 +14,7 @@ export const Container = styled.button`
 
   > h2 {
     font-weight: 400;
+    color: ${({ theme }) => theme.COLORS.LIGHT_300};
   }
 
 `;
