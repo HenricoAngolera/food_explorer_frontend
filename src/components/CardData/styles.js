@@ -39,7 +39,7 @@ export const Content = styled.div`
   }
 
   > h3 {
-    width: 100%;
+    width: 16.2rem;;
     font-size: 1.4rem;
     font-weight: 500;
   }

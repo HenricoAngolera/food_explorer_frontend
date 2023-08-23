@@ -1,14 +1,14 @@
 import { AiOutlineLeft } from "react-icons/ai"
 
-import { Container, Text } from "./styles";
+import { Container } from "./styles";
 
-export function BackButton() {
+export function BackButton({ issmall }) {
   return (
-    <Container>
+    <Container issmall={issmall}>
       <AiOutlineLeft />
-      <Text>
+      <p>
         voltar
-      </Text>
+      </p>
     </Container>
   )
 }

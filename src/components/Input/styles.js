@@ -3,12 +3,15 @@ import { styled } from "styled-components";
 export const Container = styled.div`
   width: 100%;
 
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+
   > label {
     font-family: ${({ theme }) => theme.FONTS.ROBOTO};
     font-size: 1.6rem;
     color: ${({ theme }) => theme.COLORS.LIGHT_400};
   }
-
 `;
 
 export const InputBox = styled.div`
