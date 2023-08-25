@@ -1,12 +1,12 @@
 import { Container, InputBox } from "./styles"
 
-export function Input({ icon: Icon, labelContent, ...rest }) {
+export function Input({ icon: Icon, id, isNumber, labelContent, ...rest }) {
   return (
     <Container>
-      {labelContent && <label htmlFor="" >{labelContent}</label>}
-      <InputBox>
+      {labelContent && <label htmlFor={id} >{labelContent}</label>}
+      <InputBox isNumber={isNumber}>
         {Icon && <Icon />}
-        <input {...rest} />
+        {isNumber && "R$"}<input id={id} {...rest} />
       </InputBox>
     </Container>
   )

@@ -19,7 +19,7 @@ export const Container = styled.button`
     font-size: 2rem;
   }
   > p {
-    font-size: ${({ isBiggerFont }) => (isBiggerFont ? "1.4rem" : ".94rem")};
+    font-size: ${({ isbiggerfont }) => (isbiggerfont ? "1.4rem" : ".94rem")};
     font-weight: 500;
   }
 `;

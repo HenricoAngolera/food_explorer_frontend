@@ -34,7 +34,7 @@ export function DetailsAdmin() {
             <IngredientTag title="tomate" />
           </Tags>
 
-          <Button title="Editar prato" isBiggerFont />
+          <Button title="Editar prato" isbiggerfont />
         </Main>
       </Content>
 

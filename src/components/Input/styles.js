@@ -17,7 +17,9 @@ export const Container = styled.div`
 export const InputBox = styled.div`
   display: flex;
   align-items: center;
-  gap: 1.4rem;
+  gap: ${({ isNumber }) => isNumber ? ".5rem" : "1.4rem"};
+
+  font-family: ${({ theme }) => theme.FONTS.ROBOTO};
 
   padding: 1.2rem 1.4rem;
   border-radius: .5rem;

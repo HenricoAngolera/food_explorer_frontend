@@ -8,7 +8,7 @@ import { Button } from "../Button";
 
 import hearth from "../../assets/icons/hearth.svg";
 
-export function CardData({ image, name, price, isBiggerFont, buttons }) {
+export function CardData({ image, name, price, isbiggerfont, buttons }) {
   return(
     <Container>
       <IconButton>
@@ -22,7 +22,7 @@ export function CardData({ image, name, price, isBiggerFont, buttons }) {
         {buttons && 
           <Buttons>
             <Quantity number="01" />
-            <Button title="incluir" isBiggerFont />
+            <Button title="incluir" isbiggerfont />
           </Buttons>
         }
       </Content>
