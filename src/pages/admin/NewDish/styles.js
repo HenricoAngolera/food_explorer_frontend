@@ -5,12 +5,11 @@ export const Container = styled.div`
   height: 100vh;
 
   display: grid;
-  grid-template-rows: 11.4rem auto 7.7rem;
+  grid-template-rows: 11.4rem auto;
 
   grid-template-areas: 
     "header"
     "form"
-    "footer"
   ;
 
   label {
@@ -65,3 +64,14 @@ export const IngredientsList = styled.div`
 
   background: ${({ theme }) => theme.COLORS.DARK_800};
 `
+
+export const Scroll = styled.div`
+  overflow-y: auto;
+`;
+
+export const TextAreaWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  gap: 1.6rem;
+`;

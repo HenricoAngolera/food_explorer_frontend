@@ -24,7 +24,7 @@ export const InputBox = styled.div`
   padding: 1.2rem 1.4rem;
   border-radius: .5rem;
 
-  background-color: ${({ theme }) => theme.COLORS.DARK_900};
+  background-color: ${({ theme, isdark }) => isdark ? theme.COLORS.DARK_800 : theme.COLORS.DARK_900};
   
   > svg {
     font-size: 2.4rem;

@@ -2,7 +2,6 @@ import { styled } from "styled-components";
 
 export const Container = styled.form`
   grid-area: form;
-  overflow-y: auto;
 
   display: flex;
   flex-direction: column;

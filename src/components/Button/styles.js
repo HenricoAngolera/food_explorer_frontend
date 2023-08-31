@@ -12,7 +12,7 @@ export const Container = styled.button`
   width: 100%;
 
   border: none;
-  background: ${({ theme }) => theme.COLORS.TOMATO_100};
+  background: ${({ theme, isclear }) => isclear ? theme.COLORS.TOMATO_400 : theme.COLORS.TOMATO_100};
   color: ${({ theme }) => theme.COLORS.LIGHT_100};
 
   > svg {
