@@ -1,6 +1,6 @@
 import { FiUpload } from "react-icons/fi"
 
-import { Container, Scroll, SelectImage, Ingredients, IngredientsList, TextAreaWrapper } from "./styles";
+import { Container, Scroll, SelectImage, Ingredients, IngredientsList, TextAreaWrapper, ButtonsBox } from "./styles";
 
 import { Header } from "../../../components/Header"
 import { Form } from "../../../components/Form"
@@ -11,22 +11,22 @@ import { TextArea } from "../../../components/TextArea";
 import { Button } from "../../../components/Button"
 import { Footer } from "../../../components/Footer"
 
-export function NewDish() {
+export function UpdateDish() {
   return (
     <Container>
       <Header admin />
 
       <Scroll>
-        <Form title="Novo prato">
+        <Form title="Editar prato">
           <SelectImage>
             <label>Imagem do Prato</label>
             <input type="file" id="imageDish" />
             <label htmlFor="imageDish">
               <FiUpload />
-              Selecione Imagem
+              Selecione Imagem para alterá-la
             </label>
           </SelectImage>
-          <Input type="text" labelContent="Nome" isdark placeholder="Ex.: Salada Ravanello"/>
+          <Input type="text" value="Salada Reveno" labelContent="Nome" isdark />
           <Select labelContent="Categoria" id="category" />
           <Ingredients>
             <label htmlFor="">Ingredientes</label>
@@ -35,12 +35,15 @@ export function NewDish() {
               <IngredientItem isNew placeholder="Adicionar"/>
             </IngredientsList>
           </Ingredients>
-          <Input type="number" labelContent="Preço" placeholder="00,00" isNumber isdark step="0.01" min="0.01"/>
+          <Input type="number" labelContent="Preço" value="40.00" isNumber isdark step="0.01" min="0.01"/>
           <TextAreaWrapper>
             <label htmlFor="">Descrição</label>
-            <TextArea placeholder="Fale brevemente sobre o prato, seus ingredientes e composição"/>
+            <TextArea content="A Salada César é uma opção refrescante para o verão."/>
           </TextAreaWrapper>
-          <Button title="Salvar alterações" isbiggerfont isclear></Button>
+          <ButtonsBox>
+            <Button isdark title="Excluir prato" isbiggerfont />
+            <Button title="Salvar alterações" isbiggerfont isclear></Button>
+          </ButtonsBox>
         </Form>
 
         <Footer />

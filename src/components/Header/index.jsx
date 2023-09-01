@@ -5,7 +5,7 @@ import { IoMenu } from "react-icons/io5";
 import { Logo } from "../Logo";
 import { Container, Menu, Requests } from "./styles";
 
-export function Header({ isopened }) {
+export function Header({ isopened, admin }) {
   return (
     <Container isopened={isopened}>
       <Menu>
@@ -13,11 +13,11 @@ export function Header({ isopened }) {
       </Menu>
 
       {isopened && <h1>Menu</h1>}
-      {!isopened && <Logo />}
+      {!isopened && <Logo admin />}
 
       {!isopened && 
       <Requests>
-        <PiReceipt />
+        {!admin && <PiReceipt />}
       </Requests>}
     </Container>
   )

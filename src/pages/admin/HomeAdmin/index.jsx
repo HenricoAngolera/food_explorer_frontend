@@ -11,7 +11,7 @@ import { Container, Content, HomeMessage, Text, Sections, Cards } from './styles
 export function HomeAdmin() {
   return (
     <Container>
-      <Header />
+      <Header admin />
 
       <Content>
         <HomeMessage>

@@ -13,7 +13,7 @@ import { Button } from '../../../components/Button'
 export function DetailsAdmin() {
   return (
     <Container>
-      <Header />
+      <Header admin />
 
       <Content>
         <BackButton />
