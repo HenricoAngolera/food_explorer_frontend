@@ -13,7 +13,7 @@ export function Header({ isopened, admin }) {
       </Menu>
 
       {isopened && <h1>Menu</h1>}
-      {!isopened && <Logo admin />}
+      {!isopened && <Logo admin={admin ? "admin" : ""} />}
 
       {!isopened && 
       <Requests>

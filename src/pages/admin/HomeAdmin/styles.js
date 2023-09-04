@@ -5,12 +5,11 @@ export const Container = styled.div`
   height: 100vh;
 
   display: grid;
-  grid-template-rows: 11.4rem auto 7.7rem;
+  grid-template-rows: 11.4rem auto;
 
   grid-template-areas: 
     "header"
     "content"
-    "footer"
   ;
 
 `;
@@ -23,6 +22,8 @@ export const HomeMessage = styled.section`
   margin: 1.5rem 1.6rem 0 .6rem;
   display: flex;
   align-items: center;
+
+  position: relative;
 
   &::after {
     content: "";
@@ -72,4 +73,10 @@ export const Cards = styled.div`
   width: 40.4rem;
 
   overflow-x: auto;
+`;
+
+export const Scroll = styled.div`
+  overflow-y: auto;
+
+  overflow-x: hidden;
 `;

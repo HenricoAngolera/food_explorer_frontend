@@ -2,7 +2,7 @@ import { PiReceipt } from 'react-icons/pi'
 
 import Salada from '../../assets/images/salada.png'
 
-import { Container, Content, Tags, Main, Flex } from './styles'
+import { Container, Scroll, Content, Tags, Main, Flex } from './styles'
 
 import { Header } from '../../components/Header'
 import { Footer } from '../../components/Footer'
@@ -16,34 +16,36 @@ export function Details() {
     <Container>
       <Header />
 
-      <Content>
-        <BackButton />
-        <Main>
-          <img src={Salada} alt="" />
+      <Scroll>
+        <Content>
+          <BackButton />
+          <Main>
+            <img src={Salada} alt="" />
 
-          <h1>Salada Ravenello</h1>
-          <p>
-            Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.
-          </p>
+            <h1>Salada Ravenello</h1>
+            <p>
+              Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.
+            </p>
 
-          <Tags>
-            <IngredientTag title="alface" />
-            <IngredientTag title="cebola" />
-            <IngredientTag title="pão naan" />
-            <IngredientTag title="pepino" />
-            <IngredientTag title="rabanete" />
-            <IngredientTag title="tomate" />
-          </Tags>
+            <Tags>
+              <IngredientTag title="alface" />
+              <IngredientTag title="cebola" />
+              <IngredientTag title="pão naan" />
+              <IngredientTag title="pepino" />
+              <IngredientTag title="rabanete" />
+              <IngredientTag title="tomate" />
+            </Tags>
 
-          <Flex>
-            <Quantity number="01" isDetails />
+            <Flex>
+              <Quantity number="01" isDetails />
 
-            <Button icon={PiReceipt} title=" pedir" value="25,00" />
-          </Flex>
-        </Main>
-      </Content>
+              <Button icon={PiReceipt} title=" pedir" value="25,00" />
+            </Flex>
+          </Main>
+        </Content>
 
-      <Footer />
+        <Footer />
+      </Scroll>
     </Container>
   )
 }

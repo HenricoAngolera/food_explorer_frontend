@@ -5,12 +5,11 @@ export const Container = styled.div`
   height: 100vh;
 
   display: grid;
-  grid-template-rows: 11.4rem auto 7.7rem;
+  grid-template-rows: 11.4rem auto;
 
   grid-template-areas: 
     "header"
     "content"
-    "footer"
   ;
 `;
 
@@ -53,6 +52,11 @@ export const Main = styled.div`
 export const Flex = styled.div`
   display: flex;
   justify-content: space-between;
+  gap: 1.6rem;
 
   margin-top: 4.8rem;
+`;
+
+export const Scroll = styled.div`
+  overflow-y: auto;
 `;

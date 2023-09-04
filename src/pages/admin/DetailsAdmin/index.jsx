@@ -1,8 +1,6 @@
-import { PiReceipt } from 'react-icons/pi'
-
 import Salada from '../../../assets/images/salada.png'
 
-import { Container, Content, Tags, Main } from './styles'
+import { Container, Scroll, Content, Tags, Main } from './styles'
 
 import { Header } from '../../../components/Header'
 import { Footer } from '../../../components/Footer'
@@ -15,30 +13,32 @@ export function DetailsAdmin() {
     <Container>
       <Header admin />
 
-      <Content>
-        <BackButton />
-        <Main>
-          <img src={Salada} alt="" />
+      <Scroll>
+        <Content>
+          <BackButton />
+          <Main>
+            <img src={Salada} alt="" />
 
-          <h1>Salada Ravenello</h1>
-          <p>
-            Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.
-          </p>
+            <h1>Salada Ravenello</h1>
+            <p>
+              Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.
+            </p>
 
-          <Tags>
-            <IngredientTag title="alface" />
-            <IngredientTag title="cebola" />
-            <IngredientTag title="pão naan" />
-            <IngredientTag title="pepino" />
-            <IngredientTag title="rabanete" />
-            <IngredientTag title="tomate" />
-          </Tags>
+            <Tags>
+              <IngredientTag title="alface" />
+              <IngredientTag title="cebola" />
+              <IngredientTag title="pão naan" />
+              <IngredientTag title="pepino" />
+              <IngredientTag title="rabanete" />
+              <IngredientTag title="tomate" />
+            </Tags>
 
-          <Button title="Editar prato" isbiggerfont />
-        </Main>
-      </Content>
+            <Button title="Editar prato" isbiggerfont />
+          </Main>
+        </Content>
 
-      <Footer />
+        <Footer />
+      </Scroll>
     </Container>
   )
 }
