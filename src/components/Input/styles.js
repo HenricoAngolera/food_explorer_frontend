@@ -5,7 +5,7 @@ export const Container = styled.div`
 
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
+  gap: ${({ lesspace }) => lesspace ? ".8rem" : "1.6rem"};
 
   > label {
     font-family: ${({ theme }) => theme.FONTS.ROBOTO};

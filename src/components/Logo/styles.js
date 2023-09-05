@@ -12,8 +12,13 @@ export const Container = styled.div`
     font-family: ${({ theme }) => theme.FONTS.ROBOTO};
     font-size: 1.2rem;
   }
-`;
 
-export const Text = styled.p`
+  > img {
+    ${({ isbiggersize }) => isbiggersize ? "width: 4.4rem;" : ""}
+  }
 
+  > p {
+    ${({ isbiggersize }) => isbiggersize ? "font-size: 3.7rem; font-weight: 700;" : ""}
+    font-family: ${({ theme, isbiggersize }) => isbiggersize ? theme.FONTS.ROBOTO : ""}
+  }
 `;
