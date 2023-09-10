@@ -16,7 +16,7 @@ export function MenuAdmin() {
         <Input type="text" icon={CgSearch} placeholder="Busque por pratos ou ingredientes" />
 
         <div>
-          <MenuItem title="Novo Prato" />
+          <MenuItem title="Novo Prato" to="/new" />
           <MenuItem title="Sair" />
         </div>
       </Content>

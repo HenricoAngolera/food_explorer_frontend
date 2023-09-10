@@ -28,4 +28,13 @@ export const Container = styled.button`
   &.dark {
     background-color: ${({ theme }) => theme.COLORS.DARK_800};
   }
+
+  @media (${({ theme }) => theme.MEDIA.DESKTOP}) {
+
+    > svg {
+      font-size: 3.2rem;
+    }
+
+    padding: 1.2rem 3.2rem;
+  }
 `;

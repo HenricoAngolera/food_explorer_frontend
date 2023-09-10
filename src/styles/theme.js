@@ -37,5 +37,8 @@ export default {
     ROBOTO: "'Roboto', sans-serif",
     POPPINS: "'Poppins', sans-serif",
     DM_SANS: "'DM Sans', sans-serif;"
+  },
+  MEDIA: {
+    DESKTOP: "min-width: 1368px"
   }
 }

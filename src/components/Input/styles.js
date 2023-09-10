@@ -45,4 +45,14 @@ export const InputBox = styled.div`
       color: ${({ theme }) => theme.COLORS.LIGHT_500};
     }
   }
+
+  @media (${({ theme }) => theme.MEDIA.DESKTOP}) {
+    border: ${({ border, theme }) => border ? `1px solid ${theme.COLORS.LIGHT_500}` : ""};
+
+    background: ${({ border }) => border ? "none" : ""};
+
+    &.icon-space {
+      padding-left: 9.9rem;
+    }
+  }
 `;

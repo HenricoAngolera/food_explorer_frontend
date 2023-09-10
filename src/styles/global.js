@@ -27,6 +27,7 @@ export default createGlobalStyle`
 
   a {
     text-decoration: none;
+    color: ${({ theme }) => theme.COLORS.LIGHT_100}
   }
 
   button, a {

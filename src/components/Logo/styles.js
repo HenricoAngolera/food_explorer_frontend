@@ -6,6 +6,8 @@ export const Container = styled.div`
   justify-content: center;
   gap: .8rem;
 
+  width: 100%;
+
   > .admin {
     color: ${({ theme }) => theme.COLORS.CAKE_GREEN};
     font-weight: normal;
@@ -19,6 +21,6 @@ export const Container = styled.div`
 
   > p {
     ${({ isbiggersize }) => isbiggersize ? "font-size: 3.7rem; font-weight: 700;" : ""}
-    font-family: ${({ theme, isbiggersize }) => isbiggersize ? theme.FONTS.ROBOTO : ""}
+    font-family: ${({ theme, isbiggersize }) => isbiggersize ? theme.FONTS.ROBOTO : ""};
   }
 `;

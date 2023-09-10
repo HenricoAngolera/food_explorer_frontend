@@ -1,8 +1,8 @@
 import { Container } from "./styles";
 
-export function MenuItem({ title }) {
+export function MenuItem({ title, ...rest }) {
   return (
-    <Container>
+    <Container {...rest}>
       <h2>{title}</h2>
     </Container>
   )

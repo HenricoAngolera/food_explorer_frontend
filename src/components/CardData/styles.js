@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   width: 21rem;
@@ -9,9 +10,14 @@ export const Container = styled.div`
   border-radius: 0.8rem;
 
   position: relative;
+
+  @media (${({ theme }) => theme.MEDIA.DESKTOP}) {
+    width: 30.4rem;
+    height: 46.2rem;
+  }
 `;
 
-export const IconButton = styled.div`
+export const IconButton = styled(Link)`
   position: absolute;
   top: 1.6rem;
   right: 1.6rem;
@@ -39,9 +45,13 @@ export const Content = styled.div`
   }
 
   > h3 {
-    width: 16.2rem;;
+    width: 16.2rem;
     font-size: 1.4rem;
     font-weight: 500;
+  }
+
+  > p {
+    display: none;
   }
 
   > span {
@@ -50,6 +60,34 @@ export const Content = styled.div`
     font-family: ${({ theme }) => theme.FONTS.ROBOTO};
 
     color: ${({ theme }) => theme.COLORS.CAKE_GREEN};
+  }
+
+  @media (${({ theme }) => theme.MEDIA.DESKTOP}) {
+    gap: 1.5rem; 
+
+    > img {
+      width: 17.6rem;
+      height: 17.6rem;
+    }
+
+    > h3 {
+      width: 25.6rem;
+      font-size: 2.4rem;
+      font-weight: 700;
+    }
+
+    > p {
+      display: block;
+
+      font-family: ${({ theme }) => theme.FONTS.ROBOTO};
+      font-size: 1.4rem;
+      line-height: 2.24rem;
+      color: ${({ theme }) => theme.COLORS.LIGHT_400};
+    }
+
+    > span {
+      font-size: 3.2rem;
+    }
   }
 `;
 
@@ -61,4 +99,8 @@ export const Buttons = styled.div`
   justify-content: center;
   align-items: center;
   gap: 1.6rem;
+
+  @media (${({ theme }) => theme.MEDIA.DESKTOP}) {
+    flex-direction: row;
+  }
 `;

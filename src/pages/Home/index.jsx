@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 import { Header } from '../../components/Header'
 import { Footer } from '../../components/Footer'
 import { Section } from '../../components/Section'
@@ -25,14 +27,18 @@ export function Home() {
           <Sections>
             <Section title="Refeições">
               <Cards>
-                <CardData image={sla} name="Salada Ravenello" price="49,00" isbiggerfont buttons />
+                <Link to="/details/5">
+                  <CardData image={sla} name="Salada Ravenello" price="49,00" isbiggerfont buttons />
+                </Link>
                 <CardData image={sla} name="Salada Ravenello" price="49,00" isbiggerfont buttons />
                 <CardData image={sla} name="Salada Ravenello" price="49,00" isbiggerfont buttons />
               </Cards>
             </Section>
             <Section title="Pratos principais">
               <Cards>
-                <CardData image={sla} name="Salada Ravenello" price="49,00" isbiggerfont buttons />
+                <Link to="/details/5">
+                  <CardData image={sla} name="Salada Ravenello" price="49,00" isbiggerfont buttons />
+                </Link>
                 <CardData image={sla} name="Salada Ravenello" price="49,00" isbiggerfont buttons />
                 <CardData image={sla} name="Salada Ravenello" price="49,00" isbiggerfont buttons />
               </Cards>

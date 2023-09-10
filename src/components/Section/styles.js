@@ -9,5 +9,9 @@ export const Container = styled.section`
     font-weight: 500;
 
     color: ${({ theme }) => theme.COLORS.LIGHT_300};
+
+    @media (${({ theme }) => theme.MEDIA.DESKTOP}) {
+      font-size: 3.2rem;
+    }
   }
 `;

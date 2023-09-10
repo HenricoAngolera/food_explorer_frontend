@@ -28,4 +28,8 @@ export const QuantityNumber = styled.p`
 
   color: ${({ theme }) => theme.COLORS.LIGHT_300};
 
+  @media (${({ theme }) => theme.MEDIA.DESKTOP}) {
+    font-size: 2.2rem;
+  }
+
 `;

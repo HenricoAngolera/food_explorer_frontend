@@ -41,6 +41,21 @@ export const HomeMessage = styled.section`
   img {
     width: 19.1rem;
   }
+
+  @media (${({ theme }) => theme.MEDIA.DESKTOP}) {
+    margin: 3.2rem 12.4rem 0 7rem;
+
+    &::after {
+      width: 112rem;
+      height: 26.5rem;
+
+      margin: 14.5rem 0 0 5rem;
+    }
+
+    img {
+      width: 63.2rem;
+    }
+  }
 `;
 
 export const Text = styled.div`
@@ -54,15 +69,36 @@ export const Text = styled.div`
   }
 
   p {
+    font-family: ${({ theme }) => theme.FONTS.ROBOTO};
     font-size: 1.2rem;
     font-weight: 400;
     line-height: 1.68rem;
+  }
+
+  @media (${({ theme }) => theme.MEDIA.DESKTOP}) {
+    transform: translateX(1rem);
+    margin-top: 11rem;
+    
+    h1 {
+      margin-bottom: .8rem;
+      font-size: 4rem;
+      font-weight: 500;
+    }
+    p {
+      font-size: 1.6rem;
+    }
   }
 `;
 
 export const Sections = styled.div`
   margin-top: 6.2rem;
   margin-left: 2.4rem;
+
+  @media (${({ theme }) => theme.MEDIA.DESKTOP}) {
+    width: 112.2rem;
+    margin-inline: auto;
+  }
+
 `;
 
 export const Cards = styled.div`
@@ -71,6 +107,10 @@ export const Cards = styled.div`
 
   width: 40.4rem;
   overflow-x: auto;
+
+  @media (${({ theme }) => theme.MEDIA.DESKTOP}) {
+    width: 112rem;
+  }
 `;
 
 export const Scroll = styled.div`

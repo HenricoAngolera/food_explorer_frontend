@@ -26,18 +26,51 @@ export const Container = styled.header`
     font-size: 2.1rem;
     font-weight: 400;
   }
+
+  > div:nth-child(3) {
+    display: none;
+  }
+
+  > svg {
+    display: none;
+  }
+  
+  @media (${({ theme }) => theme.MEDIA.DESKTOP}) {
+
+    padding-inline: 12.3rem;
+    gap: 3.2rem;
+
+    > div:nth-child(2) {
+      width: 27rem;
+    }
+
+    > div:nth-child(3) {
+      display: flex;
+    }
+
+    > button:nth-child(2) {
+      width: 27.4rem;
+    }
+
+    > svg {
+      font-size: 3.2rem;
+    }
+  }
 `;
 
 export const Menu = styled.button`
   border: none;
   background: none;
-
   
-  > svg {
+  svg {
     color: ${({ theme }) => theme.COLORS.LIGHT_100};
     font-size: ${({ isopened }) => (isopened ? "1.8rem" : "3.0rem")};
 
     ${({ isopened }) => (isopened ? "height: 1.8rem;" : "")}
+  }
+
+  @media (${({ theme }) => theme.MEDIA.DESKTOP}) {
+    display: none;
   }
 `;
 
@@ -49,5 +82,12 @@ export const Requests = styled.button`
     color: ${({ theme }) => theme.COLORS.LIGHT_100};
     font-size: 3.0rem;
   }
+
+  @media (${({ theme }) => theme.MEDIA.DESKTOP}) {
+    display: none;
+  }
 `;
 
+export const ButtonBox = styled.div`
+  width: 34.6rem;
+`;

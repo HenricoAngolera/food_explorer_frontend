@@ -1,8 +1,8 @@
 import { Container } from "./styles";
 
-export function TextButton({ title }) {
+export function TextButton({ title, ...rest }) {
   return (
-    <Container>
+    <Container {...rest}>
       {title}
     </Container>
   )

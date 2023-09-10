@@ -5,7 +5,7 @@ import { BackButton } from "../BackButton";
 export function Form({ title, children }) {
   return (
     <Container>
-      <BackButton issmall/>
+      <BackButton to="/" issmall/>
       <h1>{title}</h1>
       {children}
     </Container>

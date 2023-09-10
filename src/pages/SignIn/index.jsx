@@ -11,10 +11,11 @@ export function SignIn() {
       <Logo isbiggersize/>
 
       <ContentBox>
-        <Input id="email" labelContent="Email" lesspace placeholder="Exemplo: exemplo@exemplo.com.br"/>
-        <Input id="password" labelContent="Senha" lesspace placeholder="No mínimo 6 caracteres" min="6"/>
+        <h2>Faça Login</h2>
+        <Input id="email" border labelContent="Email" lesspace placeholder="Exemplo: exemplo@exemplo.com.br"/>
+        <Input id="password" border type="password" labelContent="Senha" lesspace placeholder="No mínimo 6 caracteres" min="6"/>
         <Button title="Entrar" isbiggerfont/>
-        <TextButton title="Criar conta" />
+        <TextButton to="/register" title="Criar conta" />
       </ContentBox>
     </Container>
   )

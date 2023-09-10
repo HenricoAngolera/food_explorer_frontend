@@ -18,7 +18,7 @@ export function Details() {
 
       <Scroll>
         <Content>
-          <BackButton />
+          <BackButton to="/"/>
           <Main>
             <img src={Salada} alt="" />
 
