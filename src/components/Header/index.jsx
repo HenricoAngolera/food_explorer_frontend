@@ -25,7 +25,7 @@ export function Header({ isopened, admin }) {
       <Input placeholder="Busque por pratos ou ingredientes" icon={CgSearch} iconSpace ></Input>
       
       <ButtonBox>
-        <Button icon={PiReceipt} title="Pedidos (0)" isbiggerfont></Button>
+        {admin ? <Button title="Novo Prato" isbiggerfont/> : <Button icon={PiReceipt} title="Pedidos (0)" isbiggerfont />}
       </ButtonBox>
 
       <a href="">

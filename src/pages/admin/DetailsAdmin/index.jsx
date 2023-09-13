@@ -1,6 +1,6 @@
 import Salada from '../../../assets/images/salada.png'
 
-import { Container, Scroll, Content, Tags, Main } from './styles'
+import { Container, Scroll, Content, Tags, Flex, Main, Desktop } from './styles'
 
 import { Header } from '../../../components/Header'
 import { Footer } from '../../../components/Footer'
@@ -19,21 +19,26 @@ export function DetailsAdmin() {
           <Main>
             <img src={Salada} alt="" />
 
-            <h1>Salada Ravenello</h1>
-            <p>
-              Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.
-            </p>
+            <Desktop>
+              <h1>Salada Ravenello</h1>
+              <p>
+                Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.
+              </p>
 
-            <Tags>
-              <IngredientTag title="alface" />
-              <IngredientTag title="cebola" />
-              <IngredientTag title="pão naan" />
-              <IngredientTag title="pepino" />
-              <IngredientTag title="rabanete" />
-              <IngredientTag title="tomate" />
-            </Tags>
+              <Tags>
+                <IngredientTag title="alface" />
+                <IngredientTag title="cebola" />
+                <IngredientTag title="pão naan" />
+                <IngredientTag title="pepino" />
+                <IngredientTag title="rabanete" />
+                <IngredientTag title="tomate" />
+              </Tags>
 
-            <Button title="Editar prato" isbiggerfont />
+              <Flex>
+                <Button title="Editar prato" isbiggerfont />
+              </Flex>
+
+            </Desktop>
           </Main>
         </Content>
 

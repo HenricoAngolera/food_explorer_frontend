@@ -46,6 +46,16 @@ export const SelectImage = styled.div`
       font-size: 2.4rem;
     }
   }
+
+  @media (${({ theme }) => theme.MEDIA.DESKTOP}) {
+    width: 60rem;
+
+    > label:last-child {
+      /* white-space: nowrap; */
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
 `;
 
 export const Ingredients = styled.div`
@@ -63,7 +73,11 @@ export const IngredientsList = styled.div`
   border-radius: .8rem;
 
   background: ${({ theme }) => theme.COLORS.DARK_800};
-`
+
+  @media (${({ theme }) => theme.MEDIA.DESKTOP}) {
+    width: 83.7rem;
+  }
+`;
 
 export const Scroll = styled.div`
   overflow-y: auto;
@@ -82,5 +96,36 @@ export const ButtonsBox = styled.div`
 
   > .dark {
     background-color: ${({ theme }) => theme.COLORS.DARK_800};
+  }
+
+  @media (${({ theme }) => theme.MEDIA.DESKTOP}) {
+    width: 40.8rem;
+
+    margin-left: auto;
+  }
+`;
+
+export const LineOne = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+
+  @media (${({ theme }) => theme.MEDIA.DESKTOP}) {
+    flex-direction: row;
+
+    > div:nth-child(3) {
+      width: 105.4rem;
+    }
+  }
+`;
+
+export const LineTwo = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+
+  @media (${({ theme }) => theme.MEDIA.DESKTOP}) {
+    flex-direction: row;
+    gap: 3.2rem;
   }
 `;

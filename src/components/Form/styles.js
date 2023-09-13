@@ -12,4 +12,9 @@ export const Container = styled.form`
   > h1 {
     font-weight: 500;
   }
+
+  @media (${({ theme }) => theme.MEDIA.DESKTOP}) {
+    margin: 4rem 12.4rem 5.3rem;
+
+  }
 `;

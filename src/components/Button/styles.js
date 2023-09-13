@@ -30,11 +30,16 @@ export const Container = styled.button`
   }
 
   @media (${({ theme }) => theme.MEDIA.DESKTOP}) {
+    padding: 1.2rem 3.2rem;
 
     > svg {
+      ${({ noIcon }) => noIcon ? "display: none;": ""} 
       font-size: 3.2rem;
     }
 
-    padding: 1.2rem 3.2rem;
+    > p {
+      font-size: 1.4rem;
+    }
+
   }
 `;

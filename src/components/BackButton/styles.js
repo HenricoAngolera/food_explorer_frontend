@@ -19,4 +19,15 @@ export const Container = styled(Link)`
     font-size: ${({ issmall }) => (issmall ? "1.6rem" : "2.4rem")};
     font-weight: 500;
   }
+
+  @media (${({ theme }) => theme.MEDIA.DESKTOP}) {
+    > svg {
+      font-size: 3.2rem;
+    }
+    
+    > p {
+      font-weight: 700;
+      font-size: 2.4rem;
+    }
+  }
 `;

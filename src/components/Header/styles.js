@@ -31,7 +31,7 @@ export const Container = styled.header`
     display: none;
   }
 
-  > svg {
+  > a svg {
     display: none;
   }
   
@@ -41,7 +41,7 @@ export const Container = styled.header`
     gap: 3.2rem;
 
     > div:nth-child(2) {
-      width: 27rem;
+      width: 28rem;
     }
 
     > div:nth-child(3) {
@@ -52,8 +52,9 @@ export const Container = styled.header`
       width: 27.4rem;
     }
 
-    > svg {
-      font-size: 3.2rem;
+    > a svg {
+      font-size: 2.8rem;
+      display: inline;
     }
   }
 `;
@@ -89,5 +90,10 @@ export const Requests = styled.button`
 `;
 
 export const ButtonBox = styled.div`
+  display: none;
   width: 34.6rem;
+  
+  @media (${({ theme }) => theme.MEDIA.DESKTOP}) {
+    display: block;
+  }
 `;

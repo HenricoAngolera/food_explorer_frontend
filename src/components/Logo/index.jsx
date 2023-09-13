@@ -1,12 +1,14 @@
 import diamond from "../../assets/icons/bluediamond.svg";
-import { Container } from "./styles";
+import { Container, Column } from "./styles";
 
 export function Logo({ admin, isbiggersize }) {
   return(
-    <Container isbiggersize={isbiggersize}>
+    <Container isbiggersize={isbiggersize} admin={admin}>
       <img src={diamond} alt="" />
-      <p>food explorer</p>
-      {admin ? <p className="admin">admin</p> : ""}
+      <Column>
+        <p>food explorer</p>
+        {admin ? <p className="admin">admin</p> : ""}
+      </Column>
     </Container>
   )
 }
