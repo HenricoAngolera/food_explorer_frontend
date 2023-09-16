@@ -7,7 +7,11 @@ import { Footer } from "../../../components/Footer";
 import { Input } from "../../../components/Input";
 import { MenuItem } from "../../../components/MenuItem";
 
+import { useAuth } from "../../../hooks/auth";
+
 export function MenuAdmin() {
+  const { signOut } = useAuth();
+
   return (
     <Container>
       <Header isopened />
@@ -17,7 +21,7 @@ export function MenuAdmin() {
 
         <div>
           <MenuItem title="Novo Prato" to="/new" />
-          <MenuItem title="Sair" />
+          <MenuItem title="Sair" onClick={signOut}  />
         </div>
       </Content>
 

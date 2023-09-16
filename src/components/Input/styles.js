@@ -51,6 +51,9 @@ export const InputBox = styled.div`
 
     background: ${({ border }) => border ? "none" : ""};
 
+    padding: 1.6rem 1.4rem;
+
+
     &.icon-space {
       padding-left: 9.9rem;
     }

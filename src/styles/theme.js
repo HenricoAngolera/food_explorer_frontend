@@ -39,6 +39,6 @@ export default {
     DM_SANS: "'DM Sans', sans-serif;"
   },
   MEDIA: {
-    DESKTOP: "min-width: 1368px"
+    DESKTOP: "min-width: 1024px"
   }
 }

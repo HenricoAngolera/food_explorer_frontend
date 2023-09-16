@@ -9,6 +9,8 @@ export const Container = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: center;
+
+    overflow: hidden;
   }
 `;
 
@@ -27,11 +29,15 @@ export const ContentBox = styled.div`
   }
 
   @media (${({ theme }) => theme.MEDIA.DESKTOP}) {
-    width: 47.6rem;
+    width: 67.6rem;
     padding: 6.4rem;
+
+    margin-right: 10.8rem;
 
     background-color: ${({ theme }) => theme.COLORS.DARK_700};
     border-radius: 1.6rem;
+
+    overflow: hidden;
 
     > h2 {
       display: flex;

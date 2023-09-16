@@ -6,7 +6,11 @@ export const Container = styled.div`
   justify-content: center;
   gap: .8rem;
 
+  font-weight: 700;
+
   width: 100%;
+
+  font-family: ${({ theme }) => theme.FONTS.ROBOTO};
 
   .admin {
     color: ${({ theme }) => theme.COLORS.CAKE_GREEN};
@@ -20,12 +24,13 @@ export const Container = styled.div`
   }
 
   > p {
-    ${({ isbiggersize }) => isbiggersize ? "font-size: 3.7rem; font-weight: 700;" : ""}
+    ${({ isbiggersize }) => isbiggersize ? "font-size: 3.7rem;" : ""}
     font-family: ${({ theme, isbiggersize }) => isbiggersize ? theme.FONTS.ROBOTO : ""};
   }
 
   @media (${({ theme }) => theme.MEDIA.DESKTOP}) {
-    /* flex-direction: column; */
+    ${({ isbiggersize }) => isbiggersize ? "font-size: 4.2rem;" : ""}
+    gap: 1rem;
   }
 `;
 

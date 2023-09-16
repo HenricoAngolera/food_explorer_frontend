@@ -7,7 +7,11 @@ import { Footer } from "../../components/Footer";
 import { Input } from "../../components/Input";
 import { MenuItem } from "../../components/MenuItem";
 
+import { useAuth } from "../../hooks/auth";
+
 export function Menu() {
+  const { signOut } = useAuth();
+
   return (
     <Container>
       <Header isopened />
@@ -15,7 +19,7 @@ export function Menu() {
       <Content>
         <Input type="text" icon={CgSearch} placeholder="Busque por pratos ou ingredientes" />
 
-        <MenuItem title="Sair" />
+        <MenuItem title="Sair" onClick={signOut} />
       </Content>
 
       <Footer />

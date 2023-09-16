@@ -12,7 +12,11 @@ import { Logo } from "../Logo";
 import { Input } from "../Input";
 import { Button } from "../Button";
 
+import { useAuth } from "../../hooks/auth";
+
 export function Header({ isopened, admin }) {
+  const { signOut } = useAuth();
+
   return (
     <Container isopened={isopened}>
       <Menu>
@@ -28,7 +32,7 @@ export function Header({ isopened, admin }) {
         {admin ? <Button title="Novo Prato" isbiggerfont/> : <Button icon={PiReceipt} title="Pedidos (0)" isbiggerfont />}
       </ButtonBox>
 
-      <a href="">
+      <a href="" onClick={signOut}>
         <FiLogOut />
       </a>
 
