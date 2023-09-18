@@ -29,19 +29,20 @@ export const SelectImage = styled.div`
   > input {
     display: none;
   }
-
+  
   > label:last-child {
     padding: 1.2rem 3.2rem;
     border-radius: .5rem;
-
+    
     display: flex;
     align-items: center;
     gap: .8rem;
-
+    
     font-weight: 500;
     background-color: ${({ theme }) => theme.COLORS.DARK_800};
     color: ${({ theme }) => theme.COLORS.LIGHT_100};
-
+    
+    cursor: pointer;
     > svg {
       font-size: 2.4rem;
     }

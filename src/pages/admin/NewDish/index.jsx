@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { FiUpload } from "react-icons/fi"
 
+import { useNavigate } from "react-router-dom";
+
 import { Container, Scroll, LineOne, SelectImage, LineTwo, Ingredients, IngredientsList, TextAreaWrapper, ButtonsBox } from "./styles";
 
 import { Header } from "../../../components/Header"
@@ -15,31 +17,66 @@ import { Footer } from "../../../components/Footer"
 import { api } from "../../../services/api";
 
 export function NewDish() {
-  const [image, setImage] = useState("");
+  const [image, setImage] = useState(null);
   const [name, setName] = useState("");
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState("dish");
+
   const [ingredients, setIngredients] = useState([]);
+  const [inputWidth, setInputWidth] = useState(8);
   const [newIngredient, setNewIngredient] = useState("");
+
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
+
+  const navigate = useNavigate();
 
   function handleAddIngredients () {
     setIngredients(prevState => [...prevState, newIngredient]) 
     setNewIngredient("")
   }
 
-  async function registerItem(e) {
-    e.preventDefault();
-    await api.post("/dishes", {
-      image,
-      category,
-      name,
-      price,
-      ingredients: [ingredient],
-      description
-    })
+  function handleRemoveIngredient(deleted) {
+    setIngredients(prevState => prevState.filter(ingredient => ingredient !== deleted))
+  }
 
-    alert("Cadastrou!")
+  function handleIngredientInput(e) {
+    const value = e.target.value;
+    setNewIngredient(value);
+    setInputWidth(e.target.scrollWidth + 2);
+  }
+
+  function handleSelectedImage(e) {
+    const file = e.target.files[0];
+    if (file) {
+      setImage(file);
+    }
+  }
+
+  async function registerItem(e) {
+    e.preventDefault()
+    if (image) {
+
+      const fileUploadForm = new FormData();
+      fileUploadForm.append("image", image);
+
+      const { data: dish_id } = await api.post("/dishes", {
+        category,
+        name,
+        price,
+        ingredients,
+        description
+      })
+
+      fileUploadForm.append("dish_id", dish_id);
+
+      await api.patch("/dishes", fileUploadForm);
+      
+      alert("Cadastrado com sucesso!")
+      navigate(-1);
+    } else {
+      alert("Adcione uma imagem!")
+    }
+
   }
 
   return (
@@ -51,10 +88,10 @@ export function NewDish() {
           <LineOne>
             <SelectImage>
               <label>Imagem do Prato</label>
-              <input type="file" id="imageDish" onChange={e => setImage(e.target.value)} />
+              <input type="file" id="imageDish" onChange={handleSelectedImage} />
               <label htmlFor="imageDish">
                 <FiUpload />
-                Selecione Imagem
+                {image ? image.name : "Selecione Imagem"}
               </label>
             </SelectImage>
             <Input type="text" labelContent="Nome" isdark placeholder="Ex.: Salada Ravanello" onChange={e => setName(e.target.value)}/>
@@ -66,11 +103,10 @@ export function NewDish() {
               <IngredientsList>
                 {
                   ingredients.map((ingredient, index) => (
-                    <IngredientItem key={String(index)} value={ingredient} onClick={() => {}}/>
-                  )
-                  )
+                    <IngredientItem key={String(index)} value={ingredient} onClick={() => handleRemoveIngredient(ingredient)}/>
+                  ))
                 }
-                <IngredientItem isNew placeholder="Adicionar" value={newIngredient} onChange={e => setNewIngredient(e.target.value)} onClick={handleAddIngredients}/>
+                <IngredientItem isNew placeholder="Adicionar" value={newIngredient} inputWidth={inputWidth} onChange={handleIngredientInput} onClick={handleAddIngredients}/>
               </IngredientsList>
             </Ingredients>
             <Input type="number" labelContent="Preço" placeholder="00,00" isNumber isdark step="0.01" min="0.01" onChange={e => setPrice(e.target.value)}/>
@@ -80,7 +116,7 @@ export function NewDish() {
             <TextArea placeholder="Fale brevemente sobre o prato, seus ingredientes e composição" onChange={e => setDescription(e.target.value)}/>
           </TextAreaWrapper>
           <ButtonsBox>
-            <Button title="Salvar alterações" isbiggerfont isclear onClick={(e) => registerItem(e)}></Button>
+            <Button title="Salvar alterações" isbiggerfont isclear onClick={registerItem}></Button>
           </ButtonsBox>
         </Form>
 

@@ -29,7 +29,7 @@ export const Container = styled.div`
   > input {
     color: ${({ theme }) => theme.COLORS.LIGHT_100};
     background: transparent;
-    width: 8rem;
+    width: ${(props) => props.inputWidth}rem;
     border: none;
 
     &::placeholder {
