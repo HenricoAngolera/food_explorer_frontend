@@ -7,14 +7,14 @@ import { Button } from "../Button";
 
 import hearth from "../../assets/icons/hearth.svg";
 
-export function CardData({ image, name, price, isbiggerfont, buttons }) {
+export function CardData({ image, name, price, isbiggerfont, buttons, ...rest }) {
   return(
     <Container>
       <IconButton to={buttons ? "/details/5" : "/update"}>
         {buttons ? <img src={hearth} alt="" /> : <PiPencilSimpleBold/>}
       </IconButton>
 
-      <Content>
+      <Content {...rest}>
         <img src={image} alt="" />
         <h3>{name} &gt;</h3>
         <p>Rabanetes, folhas verdes e molho agridoce salpicados com gergilim</p>

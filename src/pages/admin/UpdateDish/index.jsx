@@ -13,8 +13,23 @@ import { TextArea } from "../../../components/TextArea";
 import { Button } from "../../../components/Button"
 import { Footer } from "../../../components/Footer"
 
+import { api } from "../../../services/api";
+
 export function UpdateDish() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  const [image, setImage] = useState("");
+  const [name, setName] = useState("");
+  const [category, setCategory] = useState("");
+  const [ingredients, setIngredients] = useState([]);
+  const [ingredient, setIngredient] = useState("");
+  const [price, setPrice] = useState("");
+  const [description, setDescription] = useState("");
+
+  let buttonText = 'Selecione Imagem para alterá-la';
+  if (windowWidth > 1024) {
+    buttonText = 'Selecione Imagem';
+  }
 
   useEffect(() => {
     const handleResize = () => {
@@ -27,11 +42,6 @@ export function UpdateDish() {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-
-  let buttonText = 'Selecione Imagem para alterá-la';
-  if (windowWidth > 1024) {
-    buttonText = 'Selecione Imagem';
-  }
 
   return (
     <Container>

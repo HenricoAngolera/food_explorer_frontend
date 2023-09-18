@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react";
+import jwt from "jwt-decode";
 
 import { api } from "../services/api";
 
@@ -11,11 +12,16 @@ function AuthProvider({ children }) {
       const response = await api.post("/sessions", { email, password })
       const { user, token } = response.data;
 
+      const { isAdmin } = jwt(token);
+
+      const adminPages = isAdmin == 1;
+
       localStorage.setItem("@foodexplorer:user", JSON.stringify(user))
       localStorage.setItem("@foodexplorer:token", token)
+      localStorage.setItem("@foodexplorer:isAdmin", adminPages)
 
-      api.defaults.headers.authorization = `Bearer ${token}`
-      setData({ user, token });
+      api.defaults.headers.common['Authorization'] = `Bearer ${token}`
+      setData({ user, token, adminPages });
     } catch (error) {
       if (error.response) {
         alert(error.response.data.message)
@@ -25,10 +31,10 @@ function AuthProvider({ children }) {
     }
   }
 
-
   function signOut() {
     localStorage.removeItem("@foodexplorer:token");
     localStorage.removeItem("@foodexplorer:user");
+    localStorage.removeItem("@foodexplorer:isAdmin");
 
     setData({})
   }
@@ -36,13 +42,15 @@ function AuthProvider({ children }) {
   useEffect(() => {
     const token = localStorage.getItem('@foodexplorer:token')
     const user = localStorage.getItem('@foodexplorer:user')
+    const adminPages = localStorage.getItem("@foodexplorer:isAdmin");
 
     if (token && user) {
-      api.defaults.headers.authorization = `Bearer ${token}`
+      api.defaults.headers.common['Authorization'] = `Bearer ${token}`
 
       setData({
         token, 
-        user: JSON.parse(user)
+        user: JSON.parse(user),
+        adminPages
       })
     }
   }, [])
@@ -51,7 +59,7 @@ function AuthProvider({ children }) {
 		<AuthContext.Provider value={{ 
       signIn,
       signOut, 
-      user: data.user 
+      user: data.user,
     }}>
       {children}
     </AuthContext.Provider>
