@@ -1,4 +1,5 @@
-import Salada from '../../../assets/images/salada.png'
+import { useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 
 import { Container, Scroll, Content, Tags, Flex, Main, Desktop } from './styles'
 
@@ -8,34 +9,57 @@ import { BackButton } from '../../../components/BackButton'
 import { IngredientTag } from '../../../components/IngredientTag'
 import { Button } from '../../../components/Button'
 
+import { api } from "../../../services/api"
+
 export function DetailsAdmin() {
+  const [data, setData] = useState(null)
+
+  const params = useParams();
+
+  const navigate = useNavigate();
+
+  function handleEdit(id) {
+    navigate(`/update/${id}`)
+  }
+
+  useEffect(() => {
+    async function fetchDish() {
+      const response = await api.get(`/dishes/${params.id}`)
+			setData(response.data);
+    }
+
+    fetchDish()
+  }, [])
+
   return (
     <Container>
       <Header admin />
 
+      { data && 
       <Scroll>
         <Content>
           <BackButton />
           <Main>
-            <img src={Salada} alt="" />
+            <img src={`${api.defaults.baseURL}/files/${data.image}`} alt={`imagem do ${data.name}`} />
 
             <Desktop>
-              <h1>Salada Ravenello</h1>
+              <h1>{data.name}</h1>
               <p>
-                Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.
+              {data.description}
               </p>
 
-              <Tags>
-                <IngredientTag title="alface" />
-                <IngredientTag title="cebola" />
-                <IngredientTag title="pão naan" />
-                <IngredientTag title="pepino" />
-                <IngredientTag title="rabanete" />
-                <IngredientTag title="tomate" />
-              </Tags>
+              {data.ingredients && 
+                <Tags>
+                  {
+                    data.ingredients.map(ingredient => (
+                      <IngredientTag key={String(ingredient.id)} title={ingredient.name} />
+                    ))
+                  }
+                </Tags>
+              }
 
               <Flex>
-                <Button title="Editar prato" isbiggerfont />
+                <Button title="Editar prato" isbiggerfont onClick={() => handleEdit(data.id)} />
               </Flex>
 
             </Desktop>
@@ -44,6 +68,7 @@ export function DetailsAdmin() {
 
         <Footer />
       </Scroll>
+      }
     </Container>
   )
 }

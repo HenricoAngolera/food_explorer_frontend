@@ -42,6 +42,8 @@ export const SelectImage = styled.div`
     background-color: ${({ theme }) => theme.COLORS.DARK_800};
     color: ${({ theme }) => theme.COLORS.LIGHT_100};
 
+    cursor: pointer;
+
     > svg {
       font-size: 2.4rem;
     }

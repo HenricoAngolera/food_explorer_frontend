@@ -29,6 +29,7 @@ export const Main = styled.div`
   > img {
     width: 26rem;
     margin-block: 1.6rem;
+    border-radius: 99rem;
   }
 
   h1 {

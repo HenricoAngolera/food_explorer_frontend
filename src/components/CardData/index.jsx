@@ -1,5 +1,7 @@
 import { PiPencilSimpleBold } from "react-icons/pi";
 
+import { useNavigate } from "react-router-dom";
+
 import { Container, Buttons, IconButton, Content } from "./styles";
 
 import { Quantity } from "../Quantity";
@@ -7,17 +9,24 @@ import { Button } from "../Button";
 
 import hearth from "../../assets/icons/hearth.svg";
 
-export function CardData({ image, name, price, isbiggerfont, buttons, ...rest }) {
+export function CardData({ image, name, description, price, isbiggerfont, buttons, dishId, ...rest }) {
+
+  const navigate = useNavigate();
+
+  function handleToEdit (dishId) {
+    navigate(`/update/${dishId}`)
+  }
+
   return(
     <Container>
-      <IconButton to={buttons ? "/details/5" : "/update"}>
-        {buttons ? <img src={hearth} alt="" /> : <PiPencilSimpleBold/>}
+      <IconButton>
+        {buttons ? <img src={hearth} alt="" /> : <PiPencilSimpleBold onClick={() => handleToEdit(dishId)}/>}
       </IconButton>
 
       <Content {...rest}>
         <img src={image} alt="" />
         <h3>{name} &gt;</h3>
-        <p>Rabanetes, folhas verdes e molho agridoce salpicados com gergilim</p>
+        <p>{description}</p>
         <span>R$ {price}</span>
         {buttons && 
           <Buttons>

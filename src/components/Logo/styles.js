@@ -12,6 +12,8 @@ export const Container = styled.div`
 
   font-family: ${({ theme }) => theme.FONTS.ROBOTO};
 
+  cursor: pointer;
+
   .admin {
     color: ${({ theme }) => theme.COLORS.CAKE_GREEN};
     font-weight: normal;

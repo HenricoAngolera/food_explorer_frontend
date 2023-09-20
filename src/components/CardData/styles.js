@@ -1,5 +1,4 @@
 import { styled } from "styled-components";
-import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   width: 21rem;
@@ -9,6 +8,8 @@ export const Container = styled.div`
   background-color: ${({ theme }) => theme.COLORS.DARK_200};
   border-radius: 0.8rem;
 
+  cursor: pointer;
+
   position: relative;
 
   @media (${({ theme }) => theme.MEDIA.DESKTOP}) {
@@ -17,7 +18,7 @@ export const Container = styled.div`
   }
 `;
 
-export const IconButton = styled(Link)`
+export const IconButton = styled.a`
   position: absolute;
   top: 1.6rem;
   right: 1.6rem;
@@ -42,6 +43,7 @@ export const Content = styled.div`
   > img {
     width: 8.8rem;
     height: 8.8rem;
+    border-radius: 99rem;
   }
 
   > h3 {

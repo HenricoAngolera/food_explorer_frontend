@@ -54,6 +54,12 @@ export function NewDish() {
 
   async function registerItem(e) {
     e.preventDefault()
+
+    if (!name || name === "") { return alert("Adicione um nome!") }
+    if (newIngredient) { return alert("Um ingrediente não foi adicionado à lista!") }
+    if (!ingredients) { return alert("Adicione algum ingrediente.") }
+    if (!price || price === "") { return alert("Adicione um preço!") }
+  
     if (image) {
 
       const fileUploadForm = new FormData();
@@ -74,9 +80,8 @@ export function NewDish() {
       alert("Cadastrado com sucesso!")
       navigate(-1);
     } else {
-      alert("Adcione uma imagem!")
+      alert("Adicione uma imagem!")
     }
-
   }
 
   return (

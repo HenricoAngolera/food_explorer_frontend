@@ -1,9 +1,9 @@
 import diamond from "../../assets/icons/bluediamond.svg";
 import { Container, Column } from "./styles";
 
-export function Logo({ admin, isbiggersize }) {
+export function Logo({ admin, isbiggersize, ...rest }) {
   return(
-    <Container isbiggersize={isbiggersize} admin={admin}>
+    <Container isbiggersize={isbiggersize} admin={admin} {...rest}>
       <img src={diamond} alt="" />
       <Column>
         <p>food explorer</p>
