@@ -12,6 +12,12 @@ export const Container = styled.div`
 
   position: relative;
 
+  transition: 0.3s;
+
+  &:hover{
+    background-color: ${({ theme }) => theme.COLORS.LIGHT_700};
+  }
+
   @media (${({ theme }) => theme.MEDIA.DESKTOP}) {
     width: 30.4rem;
     height: 46.2rem;
@@ -25,6 +31,10 @@ export const IconButton = styled.a`
 
   > svg {
     font-size: 2.4rem;
+
+    &:hover {
+      color: ${({ theme }) => theme.COLORS.LIGHT_300}
+    }
   }
 `;
 

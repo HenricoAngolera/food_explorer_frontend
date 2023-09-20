@@ -100,4 +100,18 @@ export const Tags = styled.div`
 
 export const Scroll = styled.div`
   overflow-y: auto;
+
+  animation: downToTop 1.5s;
+
+  @keyframes downToTop {
+    0% {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 `;

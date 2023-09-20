@@ -3,6 +3,22 @@ import { styled } from "styled-components";
 export const Container = styled.div`
   margin-top: 15.8rem;
 
+  > div:first-child {
+    animation: topToDown 1.5s;
+
+    @keyframes topToDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-15px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+
   @media (${({ theme }) => theme.MEDIA.DESKTOP}) {
     margin-block: auto;
 
@@ -26,6 +42,20 @@ export const ContentBox = styled.div`
 
     font-size: 3.2rem;
     font-weight: 500;
+  }
+
+  animation: downToTop 1.5s;
+
+  @keyframes downToTop {
+    0% {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   @media (${({ theme }) => theme.MEDIA.DESKTOP}) {

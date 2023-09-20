@@ -25,6 +25,11 @@ export const Container = styled.button`
     font-weight: 500;
   }
 
+  &:hover {
+    color: ${({ theme }) => theme.COLORS.TOMATO_100};
+    background: ${({ theme }) => theme.COLORS.LIGHT_100};
+  }
+
   &.dark {
     background-color: ${({ theme }) => theme.COLORS.DARK_800};
   }

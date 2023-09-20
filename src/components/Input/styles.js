@@ -46,6 +46,10 @@ export const InputBox = styled.div`
     }
   }
 
+  &:hover {
+    background-color: ${({ theme }) => theme.COLORS.DARK_700};
+  }
+
   @media (${({ theme }) => theme.MEDIA.DESKTOP}) {
     border: ${({ border, theme }) => border ? `1px solid ${theme.COLORS.LIGHT_500}` : ""};
 

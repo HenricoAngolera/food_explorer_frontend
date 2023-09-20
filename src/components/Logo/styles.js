@@ -25,10 +25,6 @@ export const Container = styled.div`
     ${({ isbiggersize }) => isbiggersize ? "width: 4.4rem;" : ""}
   }
 
-  > p {
-    ${({ isbiggersize }) => isbiggersize ? "font-size: 3.7rem;" : ""}
-    font-family: ${({ theme, isbiggersize }) => isbiggersize ? theme.FONTS.ROBOTO : ""};
-  }
 
   @media (${({ theme }) => theme.MEDIA.DESKTOP}) {
     ${({ isbiggersize }) => isbiggersize ? "font-size: 4.2rem;" : ""}
@@ -40,4 +36,9 @@ export const Column = styled.div`
   display: flex;
   flex-direction: column;
   align-items: end;
+
+  p {
+    font-size: ${({ isbiggersize }) => isbiggersize ? "3.7rem" : "2.1rem"};
+    font-family: ${({ theme }) => theme.FONTS.ROBOTO};
+  }
 `

@@ -24,9 +24,23 @@ export const HomeMessage = styled.section`
 
   position: relative;
 
+  animation: downToTop 1.5s;
+
+  @keyframes downToTop {
+    0% {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   &::after {
     content: "";
-    width: 37.6rem;
+    width: 38.9rem;
     height: 10rem;
 
     margin: 2.3rem 0 0 3rem;
@@ -73,6 +87,7 @@ export const Text = styled.div`
     font-size: 1.2rem;
     font-weight: 400;
     line-height: 1.68rem;
+    width: 30rem;
   }
 
   @media (${({ theme }) => theme.MEDIA.DESKTOP}) {
@@ -86,6 +101,7 @@ export const Text = styled.div`
     }
     p {
       font-size: 1.6rem;
+      width: 100%;
     }
   }
 `;
@@ -93,6 +109,20 @@ export const Text = styled.div`
 export const Sections = styled.div`
   margin-top: 6.2rem;
   margin-left: 2.4rem;
+
+  animation: downToTop 1.5s;
+
+  @keyframes downToTop {
+    0% {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
   @media (${({ theme }) => theme.MEDIA.DESKTOP}) {
     width: 112.2rem;

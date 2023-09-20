@@ -19,6 +19,10 @@ export const Container = styled.a`
     font-weight: 500;
   }
 
+  &:hover {
+    color: ${({ theme }) => theme.COLORS.LIGHT_200};
+  }
+
   @media (${({ theme }) => theme.MEDIA.DESKTOP}) {
     > svg {
       font-size: 3.2rem;
