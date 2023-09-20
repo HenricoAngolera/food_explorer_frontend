@@ -27,6 +27,11 @@ export function Header({ isopened, admin, onSearch }) {
     navigate("/new")
   }
 
+  function handleSignOut() {
+    navigate("/");
+    signOut();
+  }
+
   return (
     <Container isopened={isopened}>
       <Menu>
@@ -42,7 +47,7 @@ export function Header({ isopened, admin, onSearch }) {
         {admin ? <Button title="Novo Prato" onClick={() => handleNewDish()} isbiggerfont/> : <Button icon={PiReceipt} title="Pedidos (0)" isbiggerfont />}
       </ButtonBox>
 
-      <a href="" onClick={signOut}>
+      <a href="" onClick={handleSignOut}>
         <FiLogOut />
       </a>
 

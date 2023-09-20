@@ -40,6 +40,11 @@ export function MenuAdmin() {
     navigate("/")
   }
 
+  function handleSignOut() {
+    navigate("/")
+    signOut()
+  }
+
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
@@ -65,7 +70,7 @@ export function MenuAdmin() {
 
         <div>
           <MenuItem title="Novo Prato" to="/new" />
-          <MenuItem title="Sair" onClick={signOut}  />
+          <MenuItem title="Sair" onClick={handleSignOut}  />
         </div>
         <List>
           { dishes && dishes.map((dish) => (

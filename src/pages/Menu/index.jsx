@@ -40,6 +40,11 @@ export function Menu() {
     navigate("/")
   }
 
+  function handleSignOut() {
+    navigate("/")
+    signOut()
+  }
+
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
@@ -64,7 +69,7 @@ export function Menu() {
         <Input type="text" icon={CgSearch} placeholder="Busque por pratos ou ingredientes" onSearch={setSearch}/>
 
         <div>
-          <MenuItem title="Sair" onClick={signOut}  />
+          <MenuItem title="Sair" onClick={handleSignOut}  />
         </div>
         <List>
           { dishes && dishes.map((dish) => (
