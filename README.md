@@ -68,6 +68,10 @@ Segue o projeto back-end desta aplicação:
 
 [FoodExplorer Back-end](https://github.com/HenricoAngolera/food_explorer_backend)
 
+## Considerações finais
+
+Estes projetos, tanto o front-end quanto o back-end representam muito do que aprendi nos últimos tempos, fiquei muito satisfeito com minha evolução, mas vou evoluir ainda mais! Este projeto será melhorado ao longo do tempo, obrigado por ler até aqui! 
+
 ## Feedback
 
 Se você tiver algum feedback, por favor me deixe saber por meio de henrico.an@gmail.com
