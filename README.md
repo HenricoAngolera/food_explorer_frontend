@@ -1,10 +1,10 @@
 # FoodExplorer Front-end
 
 <p align="center">
-  <img alt="Rocketnotes" src="./src/assets/rocketnotes.jpeg" width="100%">
+  <img alt="FoodExplorer" src="./src/assets/images/foodexplorer.png" width="100%">
 </p>
 
-Para acessar o projeto no ar, clique aqui [AQUI]([https://food-explorer-front-end.netlify.app/]) ou visite o repositório [Back-end]([https://github.com/HenricoAngolera/food_explorer_backend])
+Para acessar o projeto no ar, clique aqui [AQUI](https://food-explorer-front-end.netlify.app/) ou visite o repositório [Back-end](https://github.com/HenricoAngolera/food_explorer_backend)
 
 Este é projeto é o front-end do desafio final do Explorer da Rocketseat, ele consiste em um e-comerce de restaurante figurativo. E usei as seguintes tecnologias:
 
@@ -24,9 +24,9 @@ Você pode cadastrar um novo usuário comum, ou usar um já cadastrados:
 - email: henrico@email.com
 - senha: 123456
 
-## Como utilizar: 
+## Como utilizar:
 
-Você pode acessar o projeto online: [https://food-explorer-front-end.netlify.app/]([https://food-explorer-front-end.netlify.app/]) , ou rodar localmente.
+Você pode acessar o projeto online: [https://food-explorer-front-end.netlify.app/](https://food-explorer-front-end.netlify.app/) , ou rodar localmente.
 
 Para rodar localmente, siga os seguintes passos:
 
@@ -66,7 +66,7 @@ Após isso, acesse em seu navegador o endereço que aparecer no terminal.
 
 Segue o projeto back-end desta aplicação:
 
-[FoodExplorer Back-end]([https://github.com/HenricoAngolera/food_explorer_backend])
+[FoodExplorer Back-end](https://github.com/HenricoAngolera/food_explorer_backend)
 
 ## Feedback
 
