@@ -24,6 +24,8 @@ export function Menu() {
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
+  const navigate = useNavigate();
+
   async function fetchDishes() {
     const { data } = await api.get(`/dishes?name=${search}`);
 
@@ -34,7 +36,6 @@ export function Menu() {
 
   fetchDishes()
 
-  const navigate = useNavigate();
 
   if (windowWidth > 1024) {
     navigate("/")

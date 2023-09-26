@@ -22,6 +22,8 @@ export function MenuAdmin() {
   const [mainCourses, setMainCourses] = useState([]);
   const [drinks, setDrinks] = useState([]);
 
+  const navigate = useNavigate();
+
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   async function fetchDishes() {
@@ -34,10 +36,12 @@ export function MenuAdmin() {
 
   fetchDishes()
 
-  const navigate = useNavigate();
-
   if (windowWidth > 1024) {
     navigate("/")
+  }
+
+  function handleNewDish() {
+    navigate("/new")
   }
 
   function handleSignOut() {
@@ -69,7 +73,7 @@ export function MenuAdmin() {
         <Input type="text" icon={CgSearch} placeholder="Busque por pratos ou ingredientes" onSearch={setSearch}/>
 
         <div>
-          <MenuItem title="Novo Prato" to="/new" />
+          <MenuItem title="Novo Prato" onClick={handleNewDish} />
           <MenuItem title="Sair" onClick={handleSignOut}  />
         </div>
         <List>
