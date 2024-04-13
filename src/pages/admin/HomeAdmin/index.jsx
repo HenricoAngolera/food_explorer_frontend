@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { ReactGA } from 'react-ga4'
+import ReactGA from 'react-ga4'
 
 import { Header } from '../../../components/Header'
 import { Footer } from '../../../components/Footer'
@@ -40,8 +40,6 @@ export function HomeAdmin() {
     setDrinks(data.filter(drink => drink.category === 'drink'))
     ReactGA.event('search', search)
   }
-
-  fetchDishes()
 
   function handleDetails(id) {
     navigate(`/details_admin/${id}`)
