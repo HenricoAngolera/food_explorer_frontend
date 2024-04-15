@@ -33,7 +33,7 @@ export function SignUp() {
       })
       .then(() => {
         navigate('/')
-        ReactGA.event('sign_up', nome)
+        ReactGA.event('sign_up', { method: nome })
         return alert('Successfully registered user!')
       })
       .catch(error => {

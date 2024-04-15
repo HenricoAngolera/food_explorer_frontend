@@ -38,7 +38,7 @@ export function HomeAdmin() {
       data.filter(mainCourse => mainCourse.category === 'main course')
     )
     setDrinks(data.filter(drink => drink.category === 'drink'))
-    ReactGA.event('search', search)
+    ReactGA.event('search', { search_term: search })
   }
 
   function handleDetails(id) {
